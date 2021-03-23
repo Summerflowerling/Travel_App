@@ -1,7 +1,7 @@
-import {getLocation, handleSubmit} from "./js/getLocation"
+import {getLocation, handleSubmit} from "./js/getLocation.js"
 import "./style/footer.scss"
 import "./style/main.scss"
 import "./style/form.scss"
 
 
-export{getLocation, handleSubmit}
+alert("it works")

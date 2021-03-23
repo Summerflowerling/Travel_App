@@ -1,8 +1,8 @@
-function getLocation(){
+export function getLocation(){
     console.log("show me")
 }
 
-function handleSubmit(event){
+export function handleSubmit(event){
     event.preventDefault()
     const destinaitonInput = document.getElementById("destination").value
 
@@ -12,4 +12,3 @@ function handleSubmit(event){
 }
 
 
-export {getLocation, handleSubmit}
