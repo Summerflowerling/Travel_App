@@ -14,7 +14,7 @@
         <img />
       </sectoion>
       <sectoion>
-        <form>
+        <form onsubmit="return Client.handleSubmit(event)">
           <input
             required
             id="destination"
@@ -29,7 +29,7 @@
             type="submit"
             name=""
             value="submit"
-            onclick="return handleSubmit(event)"
+            onclick="return Client.handleSubmit(event)"
             onsubmit="return handleSubmit(event)"
           />
         </form>
