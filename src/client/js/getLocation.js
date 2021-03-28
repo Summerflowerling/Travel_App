@@ -8,7 +8,7 @@ let lng
 
 /*post request to local server and get the data back */
 
-export  async function getLocation(input) {
+export function getLocation(input) {
     
     fetch('http://localhost:8080/getGeoname',{
         method: 'POST',
