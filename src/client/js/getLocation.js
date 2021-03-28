@@ -6,7 +6,7 @@ let lng
 
 
 
-/*fetch data from open weather api*/
+/*post request to local server and get the data back */
 
 export  async function getLocation(input) {
     
