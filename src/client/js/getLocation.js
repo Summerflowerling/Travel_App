@@ -10,7 +10,11 @@ let country
 
 /*post request to local server and get the data back */
 
+<<<<<<< HEAD
 export  function getLocation(input) {
+=======
+export function getLocation(input) {
+>>>>>>> f447c1fb130a0ec3f6225e42063ef8bcdc515a4c
     
     fetch('http://localhost:8080/getGeoname',{
         method: 'POST',

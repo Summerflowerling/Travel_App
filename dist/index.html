@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel App</title>
-  </head>
+  <link href="main.css" rel="stylesheet"></head>
   <body>
     <main>
       <header></header>
@@ -14,7 +14,7 @@
         <img />
       </sectoion>
       <sectoion>
-        <form>
+        <form onsubmit="return Client.handleSubmit(event)">
           <input
             required
             id="destination"
@@ -29,11 +29,15 @@
             type="submit"
             name=""
             value="submit"
-            onclick="return handleSubmit(event)"
+            onclick="return Client.handleSubmit(event)"
             onsubmit="return handleSubmit(event)"
           />
         </form>
       </sectoion>
+
+      <section>
+        <h1 id="test"></h1>
+      </section>
     </main>
   <script type="text/javascript" src="main.js"></script></body>
 </html>
