@@ -6,10 +6,12 @@ dotenv.config();
 const geonameApiKey = process.env.GEONAME_API ;
 const express = require('express')
 const app = express() 
+const fetch = require ('node-fetch')
 app.use(express.static('dist'))
 
-app.listen(8080, function(){
-    console.log("Testing on port 8080")
+const port = 8080
+app.listen(port, function(){
+    console.log(`Testing on port ${port}`)
     console.log(`geo name api key ${geonameApiKey}`)
 })
 
@@ -28,14 +30,19 @@ app.get('/', function (req, res) {
 
 
 
-//q=undefined&maxRows=1&username=undefined
+
 app.post("/getGeoname", async function(req,res){
-    const myPromise = await fetch(geonamesBaseUrl+`q=${req.body.location}&maxRows=1&username=${geonameApiKey}`); 
+    const API_URL = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=${geonameApiKey}` // not working
+    console.log(API_URL)
+
+   // const API_URL = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=iku124` // works
+
+    const myPromise = await fetch(API_URL); 
     
     try{
         const myData = await myPromise.json();  
         res.send(myData)
-       
+        
     }
        
     catch(error){
