@@ -1,20 +1,20 @@
 
 const test = document.getElementById("test")
+let travelStartDate = document.getElementById("travelStartDate").value
+let travelEndDate = document.getElementById("travelEndDate")
+console.log("id  test",travelEndDate)
+console.log("id value test",travelStartDate)
 const geonamesBaseUrl = "http://api.geonames.org/searchJSON?"
 let placeName=""
-let lat
-let lng
-let country 
+let url
+let city 
 
 
 
 /*post request to local server and get the data back */
 
-<<<<<<< HEAD
+
 export  function getLocation(input) {
-=======
-export function getLocation(input) {
->>>>>>> f447c1fb130a0ec3f6225e42063ef8bcdc515a4c
     
     fetch('http://localhost:8080/getGeoname',{
         method: 'POST',
@@ -27,16 +27,17 @@ export function getLocation(input) {
         
     })
     .then(res=> res.json())
-    .then(json=>{
-        console.log(json)
-        lng = json.geonames[0].lng
-        lat = json.geonames[0].lat
-        country = json.geonames[0].countryName
-        console.log("lng here",lng)
-        console.log("lat here",lat)
-        console.log("country here",country)
-        
+   .then(json=>{
+       console.log(json)
+        city = json[0].data[0].city_name
+        url = json[1]
+        console.log("after id  test",travelEndDate)//test
+        console.log("after id value test",travelStartDate)//test
+        let duration=Client.getDays(travelStartDate, travelEndDate) 
+        console.log("City name",city)//test
+        //Client.updateUi(city, url, start, end, duration)
     })
+
        
   }
 
@@ -46,11 +47,9 @@ export function getLocation(input) {
 export  function handleSubmit(event){
     event.preventDefault()
     let destinationInput = document.getElementById("destination").value
-    test.innerHTML=`<p>${destinationInput}</p>`
-    console.log(destinationInput)
+    result.innerHTML=`<p>${destinationInput}</p>`
+    console.log(destinationInput)//test
     getLocation(destinationInput)
-    Client.getDays(4,1,2021)
-    Client.updateUi()
     
   }
    
