@@ -1,8 +1,7 @@
 
 // One day Time in ms (milliseconds)
 let oneDayMs = 1000 * 60 * 60 * 24
-let inputStartDate = document.getElementById("travelStartDate").value
-let inputEndDate = document.getElementById("travelEndDate").value
+
 
 
 
