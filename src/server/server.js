@@ -1,6 +1,6 @@
 let projectData = {}
 const geonamesBaseUrl = "http://api.geonames.org/searchJSON?"
-const weatherBitUrl = "https://api.weatherbit.io/v2.0/current?"
+const weatherBitUrl = "https://api.weatherbit.io/v2.0/forecast/daily?"
 const pixabayUrl="https://pixabay.com/api/?key=4772361-58a041a9c4a31b16cbe90fbc1&q=yellow+flowers&image_type=photo"
 var path = require('path')
 const dotenv = require('dotenv');
