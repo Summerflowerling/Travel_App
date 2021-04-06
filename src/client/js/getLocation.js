@@ -11,6 +11,7 @@ let weatherInfo
 
 
 export  function getLocation(locationInput, startDate, endDate) {
+
     
     fetch('http://localhost:8080/getGeoname',{
         method: 'POST',
@@ -32,9 +33,14 @@ export  function getLocation(locationInput, startDate, endDate) {
         console.log("start Date",startDate)//test
         console.log("start Date",endDate)//test
         console.log("weatherInfo",weatherInfo)
-        let dayInfo=Client.getDays(startDate, endDate) 
+        let duration =Client.getDays(startDate, endDate) 
+        if (duration <0 || !(duration>=0)) {
+            console.log("get here")
+          return 
+        } else {
+            Client.updateUi(city, url, startDate, endDate, duration, weatherInfo)
+        }
        
-        //Client.updateUi(city, url, startDate, endDate, weatherInfo)
     })
 
        
@@ -48,9 +54,13 @@ export  function handleSubmit(event){
     let destinationInput = document.getElementById("destination").value
     let travelStartDate = document.getElementById("travelStartDate").value
     let travelEndDate = document.getElementById("travelEndDate").value
-    result.innerHTML=`<p>${destinationInput}</p>`
-    console.log(destinationInput)//test
-    getLocation(destinationInput, travelStartDate, travelEndDate)
+    console.log(destinationInput)
+    if (destinationInput===""){
+        return alert("Please fill your destination")
+    } else {
+        getLocation(destinationInput, travelStartDate, travelEndDate)
+    }
+    
   }
    
 

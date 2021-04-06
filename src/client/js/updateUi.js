@@ -1,39 +1,53 @@
-export function updateUi (location, imgUrl, start, end, dayInfo, weatherInfo){
+export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
     
-    let {temp} = weatherInfo
-    let {icon, description} = weatherInfo.weather
+    
     let testArea = document.getElementById("result")
-    let countDate =  0
-    console.log(temp,icon,description)
+  
    
     testArea.innerHTML = `
-        <h1>Travel Info</h1>
+        <h1 id="result-travel-title"><span>Travel Info<span></h1>
         <div id="result-text">
-            <h2>Destination:${location}</h2>
+            <h2 id="result-text-destination">Destination</h2>
+            <h2 id="result-text-destination-data">${location}</h2>
             <h3>Start Day:${start}</h3>
-            <h3>Start Day:${end}</h3>
-            <h3>Trip duration:${dayInfo.duration}</h3>
+            <h3>End Day:${end}</h3>
+            <h3>Trip duration:${duration} days</h3>
+            <img id="result-photo" src=${imgUrl} alt="scene in ${location}">
         </div>
-        <img id="result-photo" src=${imgUrl} alt="scene in ${location}">
+       
         <div id="result-weather">
-        <h3 id="result-weather-title">Local Weather</h3>
+        <h3 id="result-weather-title"><span>Local Weather for the next week</span></h3>
         </div>
     `
+
+   
+    
    const localWeatherSection = document.getElementById("result-weather-title")
-   //check if duration is bigger than 14 days. Want to return max 14 days weather forecast
-    while(countDate < dayInfo.duration){
-        let newDiv =  document.createElement("div")
-        let resultSectionDay = document.createElement("p")
-        let resultSectionWeatherIcon = document.createElement("img")
-        newDiv.setAttribute("id", countDate+1)
-        newDiv.style.backgroundColor = "red"
-        resultSectionDay.innerText =countDate+1
-        localWeatherSection.insertAdjacentElement("afterend", newDiv)
-        localWeatherSection.appendChild(resultSectionDay)
-        localWeatherSection.appendChild(resultSectionWeatherIcon)
-        countDate++
-        console.log(countDate)
-     }
+   //perhaps add the first 7 days history weather around the travel date 
+  console.log(weatherInfo)
+   for ( let i=weatherInfo.length ; i>0 ; i--){
+       
+    let {valid_date, temp, weather} = weatherInfo[i-1]
+
+    let newDiv =  document.createElement("div")
+    let resultSectionDay = document.createElement("p")
+    let resultSectionTemp = document.createElement("p")
+    let resultSectionWeatherIcon = document.createElement("img")
+    resultSectionDay.setAttribute("class", "result-weather-date")
+    resultSectionTemp.setAttribute("class", "result-weather-temp")
+    resultSectionWeatherIcon.setAttribute("class", "result-weather-icon")
+    newDiv.setAttribute("id", `result-travel-weather${weatherInfo.length-i+1}`)
+    newDiv.setAttribute("class", "widget")
+    resultSectionDay.innerText = valid_date
+    resultSectionTemp.innerHTML = `${temp}<span class="temp-unit">&#8451;</span>`
+    resultSectionWeatherIcon.setAttribute("src",`https://www.weatherbit.io/static/img/icons/${weather.icon}.png` )
+    localWeatherSection.insertAdjacentElement("afterend", newDiv)
+    newDiv.appendChild(resultSectionDay)
+    newDiv.appendChild(resultSectionTemp)
+    newDiv.appendChild(resultSectionWeatherIcon)
+    
+   }
+   
 
 }
 // start working with CSS 

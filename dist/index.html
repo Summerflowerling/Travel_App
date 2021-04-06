@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>Travel App</title>
   <link href="main.css" rel="stylesheet"></head>
   <body>
@@ -15,14 +20,39 @@
       </sectoion>
       <sectoion>
         <form onsubmit="return Client.handleSubmit(event)">
+          <label for="start">Destination</label>
           <input
             required
             id="destination"
-            placeholder="Enter your destination"
+            placeholder="Enter a country or a city"
             class="destination"
             type="text"
             name="destination"
             value=""
+          />
+          <label for="start">Start date:</label>
+          <input
+            required
+            id="travelStartDate"
+            placeholder="yyyy/mm/dd"
+            class="duration"
+            type="date"
+            name="tripStart"
+            min="2021-01-01"
+            max="2022-12-31"
+            value="2021/12/04"
+          />
+          <label for="start">End date:</label>
+          <input
+            required
+            id="travelEndDate"
+            placeholder="yyyy/mm/dd"
+            class="duration"
+            type="date"
+            name="tripEnd"
+            min="2021-01-01"
+            max="2022-12-31"
+            value="2021/12/20"
           />
           <input
             class="button"
@@ -36,7 +66,7 @@
       </sectoion>
 
       <section>
-        <h1 id="test"></h1>
+        <div id="result"></div>
       </section>
     </main>
   <script type="text/javascript" src="main.js"></script></body>

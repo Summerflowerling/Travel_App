@@ -15,9 +15,9 @@ app.use(express.static('dist'))
 const port = 8080
 app.listen(port, function(){
     console.log(`Testing on port ${port}`)
-    console.log(`geo name api key ${geonameApiKey}`)
-
+    console.log(`geo name api key`+ geonameApiKey)
     console.log(`weatherbit api key ${weatherbitKey}`)
+    console.log("http://api.geonames.org/searchJSON?q=test&maxRows=1&username="+geonameApiKey)
 })
 
 
@@ -38,10 +38,11 @@ app.get('/', function (req, res) {
 
 
 app.post("/getGeoname", async function(req,res){
-    /*const API_URL = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=${process.env.GEONAME_API }` // not working
+    /*const API_URL = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=${process.env.GEONAME_API}` // not working
+    /*const API_URL = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=${geonameApiKey}` // not working
     console.log(API_URL)*/
 
-    const API_URL = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=iku124` // works
+    const API_URL = "http://api.geonames.org/searchJSON?q=test&maxRows=1&username=iku124" // works
 
     const myPromise = await fetch(API_URL); 
     
@@ -53,16 +54,16 @@ app.post("/getGeoname", async function(req,res){
         console.log(lng)
         console.log(lat)
 
-        const weatherbit = await fetch (weatherBitUrl+`lat=${lat}&lon=${lng}&key=25236c54b21347c5acba0d34020a5c84`)
+        const weatherbit = await fetch (weatherBitUrl+`lat=${lat}&lon=${lng}&days=7&key=25236c54b21347c5acba0d34020a5c84`)
         console.log(weatherbitKey)
 
-        console.log(`${weatherBitUrl}lat=${lat}&lon=${lng}&key=25236c54b21347c5acba0d34020a5c84`)
-        console.log(weatherBitUrl+`lat=${lat}&lon=${lng}&key=25236c54b21347c5acba0d34020a5c84`)
+        console.log(`${weatherBitUrl}lat=${lat}&lon=${lng}&key=25236c54b21347c5acba0d34020a5c84`)//not working
+        console.log(weatherBitUrl+`lat=${lat}&lon=${lng}&key=25236c54b21347c5acba0d34020a5c84`)//works
 
         try{
             const weatherbitPromise = await weatherbit.json()
             console.log(weatherbitPromise)
-            const pixabay = await fetch(`https://pixabay.com/api/?key=4772361-58a041a9c4a31b16cbe90fbc1&q=${req.body.location}&image_type=photo&editors_choice=true`)
+            const pixabay = await fetch(`https://pixabay.com/api/?key=4772361-58a041a9c4a31b16cbe90fbc1&q=${req.body.location}&image_type=photo&editors_choice=true&category=travel`)
 
             try{
                 const pixabayPrimose = await pixabay.json()
@@ -70,6 +71,8 @@ app.post("/getGeoname", async function(req,res){
                 res.send([weatherbitPromise,pixabayPrimose.hits[0].largeImageURL])// send both result inside the array
 
             } catch(error){
+                //add a default photo here
+                res.send([weatherbitPromise, "img/backup.png"])
                 console.log("Something wrong when fetching the photo",error)
             }
 

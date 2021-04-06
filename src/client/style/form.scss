@@ -1,17 +1,19 @@
 $fontSizeforlist: 1.2rem;
 $crismon: "Crimson Text", serif;
 $buttonColor: #d3a588;
+$secondColor: #2221208f;
+$bodyColor: #daad86;
+$lightYellow: #f7de86;
 $lighterColor: #f5ede0;
-$secondColor: #afabab8f;
-$min-width: 200px;
+$whiteFont: rgb(255, 251, 247);
+$brown: #bc986a;
+$blue: #659dbd;
 
 form {
-  border-radius: 3px;
-  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: $min-width;
+  color: $whiteFont;
 }
 
 .button {
@@ -36,8 +38,16 @@ form {
   outline: 0;
 }
 
-/*input text*/
-#text {
-  width: 80%;
-  min-width: $min-width;
+#travelEndDate,
+#travelStartDate,
+#destination {
+  color: $secondColor;
+  width: 50%;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 460px) {
+  form {
+    font-size: 1.5rem;
+  }
 }
