@@ -42,7 +42,7 @@ app.post("/getGeoname", async function(req,res){
     /*const API_URL = `http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=${geonameApiKey}` // not working
     console.log(API_URL)*/
 
-    const API_URL = "http://api.geonames.org/searchJSON?q=test&maxRows=1&username=iku124" // works
+    const API_URL = "http://api.geonames.org/searchJSON?q=${req.body.location}&maxRows=1&username=iku124" // works
 
     const myPromise = await fetch(API_URL); 
     
