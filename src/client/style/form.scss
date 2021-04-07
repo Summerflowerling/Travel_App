@@ -2,11 +2,9 @@ $fontSizeforlist: 1.2rem;
 $crismon: "Crimson Text", serif;
 $buttonColor: #d3a588;
 $secondColor: #2221208f;
-$bodyColor: #daad86;
 $lightYellow: #f7de86;
 $lighterColor: #f5ede0;
 $whiteFont: rgb(255, 251, 247);
-$brown: #bc986a;
 $blue: #659dbd;
 
 form {
@@ -31,7 +29,8 @@ form {
 }
 
 .button:hover {
-  background-color: $secondColor;
+  background-color: $lightYellow;
+  color: $secondColor;
 }
 
 .button:focus {

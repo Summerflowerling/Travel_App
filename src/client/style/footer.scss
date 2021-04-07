@@ -1,0 +1,28 @@
+$whiteFont: rgb(255, 251, 247);
+$yellow: #42330d;
+
+footer {
+  background-color: $yellow;
+  margin-top: em;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.link {
+  width: 2%;
+  min-width: 15px;
+}
+
+h5 {
+  margin-right: 0.5em;
+  color: $whiteFont;
+}
+
+.footer-img {
+  width: 100%;
+}

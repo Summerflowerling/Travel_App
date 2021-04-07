@@ -20,7 +20,8 @@ app.listen(port, function(){
     console.log(`Testing on port ${port}`)
     //test if .env works fine
     console.log(`geo name api key`+ geonameApiKey)
-    console.log(`weatherbit api key ${weatherbitKey}`)
+    console.log(`weatherbit api key=${weatherbitKey}`)
+    console.log(`pixabay api key=${pixabayKey}`)
 })
 
 

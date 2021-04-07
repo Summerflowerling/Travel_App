@@ -16,6 +16,13 @@ body {
   background-color: $blue;
 }
 
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .body-title {
   text-align: center;
   font-style: italic;
@@ -100,6 +107,12 @@ body {
   margin: 1em auto;
   font-size: $sizeTwo;
   font-style: italic;
+}
+
+.highlight {
+  font-weight: bold;
+  font-size: $sizeTwo;
+  color: $lightYellow;
 }
 
 #result-weather-title {

@@ -9,9 +9,9 @@ export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
         <div id="result-text">
             <h2 id="result-text-destination">Destination</h2>
             <h2 id="result-text-destination-data">${location}</h2>
-            <h3>Start Day:${start}</h3>
-            <h3>End Day:${end}</h3>
-            <h3>Trip duration:${duration} days</h3>
+            <h3>Start Day: <span class="highlight">${start}</span></h3>
+            <h3>End Day: <span class="highlight">${end}</span></h3>
+            <h3>Trip duration:<span class="highlight"> ${duration} days</span></h3>
             <img id="result-photo" src=${imgUrl} alt="scene in ${location}">
         </div>
        
@@ -50,4 +50,4 @@ export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
    
 
 }
-// start working with CSS 
+// TODO: add mergin bottom between the weather secion and footer
