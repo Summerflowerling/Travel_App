@@ -1,1 +1,198 @@
-$bodyColor: pink;
+$bodyColor: #daad86;
+$buttonColor: #d3a588;
+$lightYellow: #f7de86;
+$lighterColor: #f5ede0;
+$whiteFont: rgb(255, 251, 247);
+$brown: #bc986a;
+$blue: #659dbd;
+$font: Cormorant Garamond;
+$sizeOne: 1rem;
+$sizeTwo: 1.5rem;
+
+body {
+  margin: 0;
+  font-family: $font;
+  font-weight: 300;
+  background-color: $blue;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.body-title {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  color: $whiteFont;
+  padding: 0.5em;
+}
+
+#result {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1em repeat(4, 1fr) 1em;
+  grid-template-rows: repeat(3 1fr);
+  grid-gap: 0.5em;
+  max-width: 90%;
+}
+#result-travel-title {
+  grid-column: 2/6;
+  grid-row: 1/1;
+  text-align: center;
+  font-family: $font;
+  font-style: italic;
+}
+
+/*underline style*/
+
+#result-travel-title > span {
+  color: $whiteFont;
+  position: relative;
+}
+
+#result-travel-title > span:before {
+  position: absolute;
+  content: "";
+  height: 0.1em;
+  width: 100%;
+  bottom: 0.2em;
+  z-index: -1;
+  background: $lightYellow;
+}
+
+#result-photo {
+  grid-column: 2/6;
+  grid-row: 3/3;
+  width: 90%;
+  padding: 0 1em 1em;
+}
+
+#result-text {
+  grid-column: 2/6;
+  grid-row: 2/2;
+  font-size: $sizeOne;
+  background-color: $blue;
+  color: rgb(255, 251, 247);
+  margin: 0 auto;
+}
+
+#result-weather {
+  grid-column: 2/6;
+  grid-row: 4/4;
+}
+
+#result-text,
+#result-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: $lightYellow 3px solid;
+  border-radius: 10px;
+}
+
+#result-text-destination {
+  font-size: $sizeTwo;
+  font-weight: bold;
+  color: $blue;
+  padding: 0 1em;
+  background-color: $lighterColor;
+}
+
+#result-text-destination-data {
+  text-align: center;
+  margin: 1em auto;
+  font-size: $sizeTwo;
+  font-style: italic;
+}
+
+.highlight {
+  font-weight: bold;
+  font-size: $sizeTwo;
+  color: $lightYellow;
+}
+
+#result-weather-title {
+  text-align: center;
+  font-size: $sizeTwo;
+  font-style: italic;
+  padding: 1em;
+  margin: 0 auto;
+  font-weight: bold;
+  color: $lighterColor;
+}
+
+.widget {
+  background-color: $lighterColor;
+  width: 90%;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-weather-date {
+  margin: 1em auto;
+  font-size: $sizeTwo;
+  background-color: $blue;
+  padding: 0.1em 0.3em;
+  color: $whiteFont;
+}
+
+.result-weather-temp {
+  font-size: $sizeTwo;
+  margin: 0 auto;
+}
+
+.result-weather-icon {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 50%;
+  object-fit: cover;
+}
+
+.temp-unit {
+  font-size: $sizeOne;
+}
+
+//woking on bigger screen
+//Adding history weather around the traveling dates
+
+@media (min-width: 418px) {
+  .body-title {
+    font-size: 3rem;
+  }
+
+  #result-weather-title > span {
+    color: $whiteFont;
+    position: relative;
+  }
+
+  #result-weather-title > span:before {
+    position: absolute;
+    content: "";
+    height: 0.1em;
+    width: 100%;
+    bottom: 0.2em;
+    z-index: -1;
+    background: $lightYellow;
+  }
+
+  .widget {
+    background-color: $lighterColor;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .result-weather-temp {
+    font-size: $sizeTwo;
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  .result-weather-date {
+    align-self: center;
+  }
+}
