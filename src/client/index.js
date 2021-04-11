@@ -7,7 +7,7 @@ import "./style/main.scss"
 import "./style/form.scss"
 
 
-alert("it works")
+
 
 export {
    getLocation,
