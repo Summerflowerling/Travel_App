@@ -1,9 +1,9 @@
-import {getLocation} from "./js/getLocation.js"
+import {getLocation} from "../client/js/getLocation.js"
 
-describe("Check that getLocation is called with input", () => {
+describe("Check that getLocation return something", () => {
     
     test('getLocetion', () => {
         
-        expect(getLocation).toBeCalledWith(expect.anything());
+        expect(getLocation).toBeDefined();
     
 })});
