@@ -32,10 +32,10 @@ export  function getLocation(locationInput, startDate, endDate) {
         console.log("City name",city)//test
         console.log("start Date",startDate)//test
         console.log("start Date",endDate)//test
-        console.log("weatherInfo",weatherInfo)
+        console.log("weatherInfo",weatherInfo)//test
         let duration =Client.getDays(startDate, endDate) 
-        if (duration <0 || !(duration>=0)) {
-            console.log("get here")
+        if (duration <=0) {
+            alert("Date input seems not correct")
           return 
         } else {
             Client.updateUi(city, url, startDate, endDate, duration, weatherInfo)

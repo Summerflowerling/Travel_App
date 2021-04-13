@@ -24,7 +24,7 @@ export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
     
    const localWeatherSection = document.getElementById("result-weather-title")
    //perhaps add the first 7 days history weather around the travel date 
-  console.log(weatherInfo)
+ 
    for ( let i=weatherInfo.length ; i>0 ; i--){
        
     let {valid_date, temp, weather} = weatherInfo[i-1]
@@ -50,4 +50,3 @@ export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
    
 
 }
-// TODO: add mergin bottom between the weather secion and footer
