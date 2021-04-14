@@ -1,2 +1,2 @@
-const app = require('src/server/server.js')
+const app = require('./server.js')
 app.listen(8080)
