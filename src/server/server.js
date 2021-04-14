@@ -1,3 +1,5 @@
+
+
 /*Api URL*/
 const geonamesBaseUrl = "http://api.geonames.org/searchJSON?"
 const weatherBitUrl = "https://api.weatherbit.io/v2.0/forecast/daily?"
@@ -16,7 +18,7 @@ const app = express()
 const fetch = require ('node-fetch')
 app.use(express.static('dist'))
 
-const port = 8080
+/*const port = 8080
 app.listen(port, function(){
     console.log(`Testing on port ${port}`)
     //test if .env works fine
@@ -24,6 +26,7 @@ app.listen(port, function(){
     console.log(`weatherbit api key=${weatherbitKey}`)
     console.log(`pixabay api key=${pixabayKey}`)
 })
+*/
 
 
 const bodyParser = require('body-parser')
@@ -86,4 +89,4 @@ app.post("/getGeoname", async function(req,res){
 })
 
 
-
+module.exports = app
