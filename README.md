@@ -4,6 +4,7 @@ Enter the city you want to search and the travel date, this app would return you
 
 
 **Three APIs are used**
+
 -Geonames
 -weatherbit 
 -pixabay
@@ -16,6 +17,7 @@ Enter the city you want to search and the travel date, this app would return you
 4. Run `npm run build-dev`
  
 ##Test
+
 - Run Test `npm run test`
 
 
