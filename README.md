@@ -5,18 +5,18 @@ Enter the city you want to search and the travel date, this app would return you
 
 **Three APIs are used**
 
--Geonames
--weatherbit 
--pixabay
+- Geonames
+- weatherbit 
+- pixabay
 
-##Instruction
+## Instruction
 
 1. Run `npm install`
 2. Run `npm start`
 3. Run `npm run build-prod`
 4. Run `npm run build-dev`
  
-##Test
+## Test
 
 - Run Test `npm run test`
 
