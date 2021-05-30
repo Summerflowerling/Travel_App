@@ -29,10 +29,6 @@ export  function getLocation(locationInput, startDate, endDate) {
         city = json[0].city_name
         url = json[1]
         weatherInfo = json[0].data
-        console.log("City name",city)//test
-        console.log("start Date",startDate)//test
-        console.log("start Date",endDate)//test
-        console.log("weatherInfo",weatherInfo)//test
         let duration =Client.getDays(startDate, endDate) 
         if (duration <=0) {
             alert("Date input seems not correct")
