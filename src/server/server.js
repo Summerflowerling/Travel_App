@@ -69,7 +69,7 @@ app.post("/getGeoname", async function(req,res){
                 res.send([weatherbitPromise,pixabayPrimose.hits[0].largeImageURL])
 
             } catch(error){
-                res.send([weatherbitPromise, "img/backup.png"]) 
+                res.send([weatherbitPromise, "/img/backup.png"]) 
                 console.log("Something wrong when fetching the photo",error)
             }
 
