@@ -2,8 +2,7 @@
 
 This is a project to practice chaining APIs.
 Three APIs are used: Geonames, weatherbit and pixabay.
-Enter the city you want to search and the travel date. This app would return your travel duaration and give you the next 7 days's local weather forecast.
-
+Enter the city you want to search and the travel date. This app returns your travel duration and give you the next 7 days's local weather forecast.
 ## How to run
 
 1. Run: `npm install`
