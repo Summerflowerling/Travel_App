@@ -9,13 +9,12 @@ $blue: #659dbd;
 
 form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   color: $whiteFont;
 }
 
 .button {
-  margin-top: 1.5em;
   font-family: $crismon;
   font-size: $fontSizeforlist;
   text-decoration: none;
@@ -26,6 +25,7 @@ form {
   border-radius: 1%;
   transition-duration: 0.4s;
   cursor: pointer;
+  margin: 3em 45%;
 }
 
 .button:hover {
