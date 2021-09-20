@@ -21,7 +21,8 @@
         </sectoion>
         <sectoion>
           <form onsubmit="return Client.handleSubmit(event)">
-            <label for="start">Destination</label>
+            <div class="form-flex-item-wrapper">
+            <label id="label-destination" for="start">Destination:</label>
             <input
               required
               id="destination"
@@ -31,6 +32,8 @@
               name="destination"
               value=""
             />
+            </div>
+            <div class="form-flex-item-wrapper">
             <label for="start">Start date:</label>
             <input
               required
@@ -43,6 +46,8 @@
               max="2022-12-31"
               value=""
             />
+            </div>
+            <div class="form-flex-item-wrapper">
             <label for="start">End date:</label>
             <input
               required
@@ -56,6 +61,7 @@
               value=""
             />
           </form>
+        </div>
           <button
             class="button"
             type="submit"

@@ -4,13 +4,15 @@ $buttonColor: #d3a588;
 $secondColor: #2221208f;
 $lightYellow: #f7de86;
 $lighterColor: #f5ede0;
+$hover: #f3cab0;
 $whiteFont: rgb(255, 251, 247);
 $blue: #659dbd;
 
 form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   color: $whiteFont;
 }
 
@@ -18,35 +20,83 @@ form {
   font-family: $crismon;
   font-size: $fontSizeforlist;
   text-decoration: none;
-  background-color: $buttonColor;
-  color: $lighterColor;
+  background-color: $lighterColor;
+  color: $buttonColor;
   border: none;
   padding: 0.5em 1em;
   border-radius: 1%;
   transition-duration: 0.4s;
   cursor: pointer;
-  margin: 3em 45%;
+  margin: 1em 35%;
 }
 
 .button:hover {
-  background-color: $lightYellow;
+  background-color: $hover;
   color: $secondColor;
 }
 
 .button:focus {
   outline: 0;
+  background-color: $lighterColor;
 }
 
 #travelEndDate,
 #travelStartDate,
 #destination {
   color: $secondColor;
-  width: 50%;
+  width: 10em;
   margin-bottom: 1em;
 }
 
-@media (min-width: 460px) {
+@media (min-width: 350px) {
+  .body-title {
+    font-size: 2.5rem;
+  }
   form {
     font-size: 1.5rem;
+  }
+  .form-flex-item-wrapper {
+    //border: 2px solid violet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #travelEndDate,
+  #travelStartDate,
+  #destination {
+    width: 15em;
+    margin-bottom: 1em;
+    font-size: $fontSizeforlist;
+  }
+
+  .button {
+    margin: 1em 40%;
+  }
+}
+
+@media (min-width: 550px) {
+  form {
+    font-size: 1.3rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-flex-item-wrapper {
+    //border: 2px solid violet;
+    margin: 0 1em;
+  }
+
+  #travelEndDate,
+  #travelStartDate,
+  #destination {
+    width: 10em;
+    margin-bottom: 1em;
+    font-size: 1rem;
+  }
+
+  .button {
+    margin: 2em 46%;
   }
 }
