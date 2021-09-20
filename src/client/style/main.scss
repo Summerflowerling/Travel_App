@@ -6,7 +6,7 @@ $whiteFont: rgb(255, 251, 247);
 $brown: #bc986a;
 $blue: #659dbd;
 $font: Cormorant Garamond;
-$sizeOne: 1rem;
+$sizeOne: 1.2rem;
 $sizeTwo: 1.5rem;
 
 body {
@@ -32,7 +32,7 @@ body {
   font-size: $sizeTwo;
 }
 
-#result {
+/*#result {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1em repeat(4, 1fr) 1em;
@@ -40,6 +40,7 @@ body {
   grid-gap: 0.5em;
   max-width: 90%;
 }
+*/
 #result-travel-title {
   grid-column: 2/6;
   grid-row: 1/1;
@@ -95,19 +96,17 @@ body {
   border-radius: 10px;
 }
 
-#result-text-destination {
-  font-size: $sizeTwo;
-  font-weight: bold;
-  color: $blue;
-  padding: 0 1em;
-  background-color: $lighterColor;
-}
-
 #result-text-destination-data {
   text-align: center;
-  margin: 1em auto;
+  margin: 0.5em auto;
   font-size: $sizeTwo;
   font-style: italic;
+}
+
+.result-travel-description {
+  font-size: $sizeOne;
+  margin: 0.5em;
+  max-width: 90%;
 }
 
 .highlight {

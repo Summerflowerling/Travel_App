@@ -7,11 +7,10 @@ export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
     testArea.innerHTML = `
         <h1 id="result-travel-title"><span>Travel Info<span></h1>
         <div id="result-text">
-            <h2 id="result-text-destination">Destination</h2>
-            <h2 id="result-text-destination-data">${location}</h2>
-            <h3>Start Day: <span class="highlight">${start}</span></h3>
-            <h3>End Day: <span class="highlight">${end}</span></h3>
-            <h3>Trip duration:<span class="highlight"> ${duration} days</span></h3>
+            <p id="result-text-destination-data">You are going to <span class="highlight">${location}</span></p>
+            <p class="result-travel-description"> Your trip starts from <span class="highlight">${start}</span> to  <span class="highlight">${end}</span>
+                for a total duration of <span class="highlight"> ${duration} days</span>
+            </p>
             <img id="result-photo" src=${imgUrl} alt="scene in ${location}">
         </div>
        
