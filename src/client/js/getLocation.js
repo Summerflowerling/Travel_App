@@ -6,13 +6,9 @@ let url
 let city 
 let weatherInfo
 
-
 /*post request to local server and get the data back */
-
-
 export  function getLocation(locationInput, startDate, endDate) {
-
-    
+ 
     fetch('http://localhost:8080/getGeoname',{
         method: 'POST',
         credentials: 'same-origin',
@@ -20,8 +16,7 @@ export  function getLocation(locationInput, startDate, endDate) {
         headers:{
             'Content-Type':'application/json',
         }, 
-        body:JSON.stringify({"location":`${locationInput}`, "startDate":`${startDate}`, "endDate":`${endDate}`}),
-        
+        body:JSON.stringify({"location":`${locationInput}`, "startDate":`${startDate}`, "endDate":`${endDate}`}),       
     })
     .then(res=> res.json())
     .then(json=>{
@@ -35,15 +30,9 @@ export  function getLocation(locationInput, startDate, endDate) {
           return 
         } else {
             Client.updateUi(city, url, startDate, endDate, duration, weatherInfo)
-        }
-       
+        }      
     })
-
-       
   }
-
-
- 
 
 export  function handleSubmit(event){
     event.preventDefault()
@@ -55,8 +44,7 @@ export  function handleSubmit(event){
         return alert("Please fill your destination")
     } else {
         getLocation(destinationInput, travelStartDate, travelEndDate)
-    }
-    
+    }    
   }
    
 

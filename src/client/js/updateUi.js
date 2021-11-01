@@ -1,9 +1,5 @@
-export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
-    
-    
+export function updateUi (location, imgUrl, start, end, duration, weatherInfo){  
     let testArea = document.getElementById("result")
-  
-   
     testArea.innerHTML = `
         <h1 id="result-travel-title"><span>Travel Info<span></h1>
         <div id="result-text">
@@ -18,16 +14,11 @@ export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
         <h3 id="result-weather-title"><span>Local Weather for the next week</span></h3>
         </div>
     `
-
-   
-    
    const localWeatherSection = document.getElementById("result-weather-title")
    //perhaps add the first 7 days history weather around the travel date 
  
    for ( let i=weatherInfo.length ; i>0 ; i--){
-       
     let {valid_date, temp, weather} = weatherInfo[i-1]
-
     let newDiv =  document.createElement("div")
     let resultSectionDay = document.createElement("p")
     let resultSectionTemp = document.createElement("p")
@@ -46,6 +37,4 @@ export function updateUi (location, imgUrl, start, end, duration, weatherInfo){
     newDiv.appendChild(resultSectionWeatherIcon)
     
    }
-   
-
 }

@@ -5,13 +5,10 @@ let today = new Date();
 
 // Calculate the trip duration
 export function getDays (inputStartDate, inputEndDate){
-
     let todayDate = today.getDate()
     let todayMonth = today.getMonth()+1
     console.log("todayDate", todayDate)
     console.log("todayMonth", todayMonth)
-    
-
     let travelStart = new Date (inputStartDate)
     let travelEnd = new Date (inputEndDate)
     let theStartDate = travelStart.getDate()
